@@ -139,7 +139,7 @@ Now, lets dive into the lib folder which has the main code for the application.
 
 ## Demo Recording and apk file
 
-https://drive.google.com/drive/folders/1t9E1gUFWgu8jsA4Boe9rY2UH50XW5Dla?usp=sharing
+<!-- https://drive.google.com/drive/folders/1t9E1gUFWgu8jsA4Boe9rY2UH50XW5Dla?usp=sharing -->
 
 ## Github Repository
 
