@@ -137,9 +137,9 @@ Now, lets dive into the lib folder which has the main code for the application.
 ## Log out Popup
 <img src="https://drive.google.com/uc?export=view&id=1T4aARapEhaDospUAehh0NdIMBfkDHFw3"  width="250" height="540"/>  -->
 
-## Demo Recording and apk file
+## Demo Recording
 
-<!-- https://drive.google.com/drive/folders/1t9E1gUFWgu8jsA4Boe9rY2UH50XW5Dla?usp=sharing -->
+https://drive.google.com/file/d/1RqtYdpGhnjz7oLTQnMgP6CYIHERFuUEJ/view?usp=sharing
 
 ## Github Repository
 
