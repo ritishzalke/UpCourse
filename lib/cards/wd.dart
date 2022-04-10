@@ -1,35 +1,38 @@
+
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:upcourse/YT_Screens/App/Kotlin/6.dart';
 import 'package:upcourse/YT_Screens/App/Kotlin/7.dart';
 import 'package:upcourse/YT_Screens/App/Swift/10.dart';
 import 'package:upcourse/YT_Screens/App/Swift/9.dart';
-import 'package:upcourse/YT_Screens/OS/20.dart';
-import 'package:upcourse/YT_Screens/OS/21.dart';
+import 'package:upcourse/YT_Screens/Web/12.dart';
+import 'package:upcourse/YT_Screens/Web/13.dart';
+import '../YT_Screens/App/Flutter/1.dart';
+import '../YT_Screens/App/Flutter/2.dart';
+import '../YT_Screens/App/Flutter/3.dart';
+import '../YT_Screens/App/Flutter/4.dart';
+import '../YT_Screens/App/Flutter/5.dart';
+import '../YT_Screens/Web/11.dart';
+import '../YT_Screens/Web/14.dart';
+import '../YT_Screens/Web/15.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:get/get.dart';
-
-import 'YT_Screens/App/Flutter/1.dart';
-import 'YT_Screens/App/Flutter/2.dart';
-import 'YT_Screens/App/Flutter/3.dart';
-import 'YT_Screens/App/Flutter/4.dart';
-import 'YT_Screens/App/Flutter/5.dart';
-
-
-class sys extends StatefulWidget {
-  const sys({Key? key}) : super(key: key);
+class WebDev extends StatefulWidget {
+  const WebDev({Key? key}) : super(key: key);
 
   @override
-  State<sys> createState() => _sysState();
+  State<WebDev> createState() => _WebDevState();
 }
 
-class _sysState extends State<sys> {
+class _WebDevState extends State<WebDev> {
   static const id = 'rating_page'; // see GetMaterialApp for this usage
 
-  final controller = Get.find<Rating6Controller>(); // finding the same instance of initialized controller
+  final controller = Get.find<Rating14Controller>(); // finding the same instance of initialized controller
 
   Widget _buildBody() {
     final stars = List<Widget>.generate(5, (index) {
-      return GetBuilder<Rating6Controller>( // rebuilds when update() is called from GetX class
+      return GetBuilder<Rating14Controller>( // rebuilds when update() is called from GetX class
         builder: (controller) => Expanded(
           child: GestureDetector(
             child: controller.buildRatingStar(index),
@@ -61,220 +64,236 @@ class _sysState extends State<sys> {
       ],
     );
   }
+
+
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Scaffold(  backgroundColor: Colors.black,
+      appBar: AppBar(  backgroundColor: Colors.deepPurple,
+        iconTheme: IconThemeData( color: Colors.black,),
+        title: Text("WEB DEVELOPMENT",style: TextStyle(color: Colors.black),),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(30),
+                      child: GestureDetector(
+                        onTap: () {
+                          // Navigator.of(context).pop();
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context)=> YoutubePlayerDemo111(title: "player")),
+                          );
+                        },
+                        child: Card(
 
-      child:   Column(
-        children: [
-          Container(
-            padding: EdgeInsets.all(30),
-            child: GestureDetector(
-              onTap: () {
-                // Navigator.of(context).pop();
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (BuildContext context)=> YoutubePlayerDemo20(title: "player")),
-                );
-              },
-              child: Card(
+                            shadowColor: Colors.red,
+                            elevation: 8,
+                            clipBehavior: Clip.antiAlias,
+                            shape:  RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                            child: Container(
+                              width:MediaQuery.of(context).size.width/3 ,
+                              height: 100,
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                image:  DecorationImage(
+                                  image: AssetImage("assets/img_19.png"),
+                                  fit: BoxFit.fill,
+                                  alignment: Alignment.topCenter,
+                                ),
 
-                  shadowColor: Colors.red,
-                  elevation: 8,
-                  clipBehavior: Clip.antiAlias,
-                  shape:  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                  child: Container(
-                    width:MediaQuery.of(context).size.width/3 ,
-                    height: 100,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      image:  DecorationImage(
-                        image: AssetImage("assets/img_25.png"),
-                        fit: BoxFit.fill,
-                        alignment: Alignment.topCenter,
+                              ),
+
+                            )
+                        ),
                       ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(30),
+                      child: GestureDetector(
+                        onTap: () {
+                          // Navigator.of(context).pop();
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context)=> YoutubePlayerDemo12(title: "player")),
+                          );
+                        },
+                        child: Card(
 
+                            shadowColor: Colors.red,
+                            elevation: 8,
+                            clipBehavior: Clip.antiAlias,
+                            shape:  RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                            child: Container(
+                              width:MediaQuery.of(context).size.width/3 ,
+                              height: 100,
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                image:  DecorationImage(
+                                  image: AssetImage("assets/img_21.png"),
+                                  fit: BoxFit.fill,
+                                  alignment: Alignment.topCenter,
+                                ),
+
+                              ),
+
+                            )
+                        ),
+                      ),
+                    ),
+                    Container(
+
+                      padding: EdgeInsets.all(30),
+                      child: GestureDetector(
+                        onTap: () {
+                          // Navigator.of(context).pop();
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context)=> YoutubePlayerDemo15(title: "player")),
+                          );
+                        },
+                        child: Card(
+
+                            shadowColor: Colors.red,
+                            elevation: 8,
+                            clipBehavior: Clip.antiAlias,
+                            shape:  RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                            child: Container(
+                              width:MediaQuery.of(context).size.width/3 ,
+                              height: 100,
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                image:  DecorationImage(
+                                  image: AssetImage("assets/img_22.png"),
+                                  fit: BoxFit.fill,
+                                  alignment: Alignment.topCenter,
+                                ),
+
+                              ),
+
+                            )
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(30),
+                      child: GestureDetector(
+                        onTap: () {
+                          // Navigator.of(context).pop();
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context)=> YoutubePlayerDemo13(title: "player")),
+                          );
+                        },
+                        child: Card(
+
+                            shadowColor: Colors.red,
+                            elevation: 8,
+                            clipBehavior: Clip.antiAlias,
+                            shape:  RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                            child: Container(
+                              width:MediaQuery.of(context).size.width/3 ,
+                              height: 100,
+
+                              decoration: BoxDecoration(
+                                image:  DecorationImage(
+                                  image: AssetImage("assets/img_20.png"),
+                                  fit: BoxFit.fill,
+                                  alignment: Alignment.topCenter,
+                                ),
+
+                              ),
+
+                            )
+                        ),
+                      ),
                     ),
 
-                  )
-              ),
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(30),
-            child: GestureDetector(
-              onTap: () {
-                // Navigator.of(context).pop();
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (BuildContext context)=> YoutubePlayerDemo21(title: "player")),
-                );
-              },
-              child: Card(
+                    Container(
+                      padding: EdgeInsets.all(30),
+                      child: GestureDetector(
+                        onTap: () {
+                          // Navigator.of(context).pop();
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (BuildContext context)=> YoutubePlayerDemo14(title: "player")),
+                          );
+                        },
+                        child: Card(
 
-                  shadowColor: Colors.red,
-                  elevation: 8,
-                  clipBehavior: Clip.antiAlias,
-                  shape:  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                  child: Container(
-                    width:MediaQuery.of(context).size.width/3 ,
-                    height: 100,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      image:  DecorationImage(
-                        image: AssetImage("assets/img_26.png"),
-                        fit: BoxFit.fill,
-                        alignment: Alignment.topCenter,
+                            shadowColor: Colors.red,
+                            elevation: 8,
+                            clipBehavior: Clip.antiAlias,
+                            shape:  RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                            child: Container(
+                              width:MediaQuery.of(context).size.width/3 ,
+                              height: 100,
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                image:  DecorationImage(
+                                  image: AssetImage("assets/img_23.png"),
+                                  fit: BoxFit.fill,
+                                  alignment: Alignment.topCenter,
+                                ),
+
+                              ),
+
+                            )
+                        ),
                       ),
-
                     ),
+                    // Container(
+                    //   padding: EdgeInsets.all(30),
+                    //   child: Card(
+                    //
+                    //       shadowColor: Colors.red,
+                    //       elevation: 8,
+                    //       clipBehavior: Clip.antiAlias,
+                    //       shape:  RoundedRectangleBorder(
+                    //         borderRadius: BorderRadius.circular(0),
+                    //       ),
+                    //       child: Container(
+                    //         width:MediaQuery.of(context).size.width/3 ,
+                    //         height: 100,
+                    //         padding: EdgeInsets.all(10),
+                    //         decoration: BoxDecoration(
+                    //           image:  DecorationImage(
+                    //             image: AssetImage("assets/img_13.png"),
+                    //             fit: BoxFit.fill,
+                    //             alignment: Alignment.topCenter,
+                    //           ),
+                    //
+                    //         ),
+                    //
+                    //       )
+                    //   ),
+                    // ),
 
-                  )
-              ),
+                  ],
+                )
+              ],
             ),
-          ),
-          // Container(
-          //
-          //   padding: EdgeInsets.all(30),
-          //   child: GestureDetector(
-          //     onTap: () {
-          //       // Navigator.of(context).pop();
-          //       Navigator.push(context, MaterialPageRoute(
-          //           builder: (BuildContext context)=> YoutubePlayerDemo18(title: "player")),
-          //       );
-          //     },
-          //     child: Card(
-          //
-          //         shadowColor: Colors.red,
-          //         elevation: 8,
-          //         clipBehavior: Clip.antiAlias,
-          //         shape:  RoundedRectangleBorder(
-          //           borderRadius: BorderRadius.circular(0),
-          //         ),
-          //         child: Container(
-          //           width:MediaQuery.of(context).size.width/3 ,
-          //           height: 100,
-          //           padding: EdgeInsets.all(10),
-          //           decoration: BoxDecoration(
-          //             image:  DecorationImage(
-          //               image: AssetImage("assets/img_27.png"),
-          //               fit: BoxFit.fill,
-          //               alignment: Alignment.topCenter,
-          //             ),
-          //
-          //           ),
-          //
-          //         )
-          //     ),
-          //   ),
-          // ),
-          _buildBody(),
-        ],
+            Text("Rate this Course:", style: TextStyle(color: Colors.red), ),
+            _buildBody(),
+          ],
+        ),
       ),
     );
-
-    // Column(
-    //   children: [
-    //     Container(
-    //       padding: EdgeInsets.all(30),
-    //       child: GestureDetector(
-    //         onTap: () {
-    //           // Navigator.of(context).pop();
-    //           Navigator.push(context, MaterialPageRoute(
-    //               builder: (BuildContext context)=> YoutubePlayerDemo13(title: "player")),
-    //           );
-    //         },
-    //         child: Card(
-    //
-    //             shadowColor: Colors.red,
-    //             elevation: 8,
-    //             clipBehavior: Clip.antiAlias,
-    //             shape:  RoundedRectangleBorder(
-    //               borderRadius: BorderRadius.circular(0),
-    //             ),
-    //             child: Container(
-    //               width:MediaQuery.of(context).size.width/3 ,
-    //               height: 100,
-    //
-    //               decoration: BoxDecoration(
-    //                 image:  DecorationImage(
-    //                   image: AssetImage("assets/img_20.png"),
-    //                   fit: BoxFit.fill,
-    //                   alignment: Alignment.topCenter,
-    //                 ),
-    //
-    //               ),
-    //
-    //             )
-    //         ),
-    //       ),
-    //     ),
-    //     GestureDetector(
-    //       onTap: () {
-    //         // Navigator.of(context).pop();
-    //         Navigator.push(context, MaterialPageRoute(
-    //             builder: (BuildContext context)=> YoutubePlayerDemo14(title: "player")),
-    //         );
-    //       },
-    //       child: Container(
-    //         padding: EdgeInsets.all(30),
-    //         child: Card(
-    //
-    //             shadowColor: Colors.red,
-    //             elevation: 8,
-    //             clipBehavior: Clip.antiAlias,
-    //             shape:  RoundedRectangleBorder(
-    //               borderRadius: BorderRadius.circular(0),
-    //             ),
-    //             child: Container(
-    //               width:MediaQuery.of(context).size.width/3 ,
-    //               height: 100,
-    //               padding: EdgeInsets.all(10),
-    //               decoration: BoxDecoration(
-    //                 image:  DecorationImage(
-    //                   image: AssetImage("assets/img_23.png"),
-    //                   fit: BoxFit.fill,
-    //                   alignment: Alignment.topCenter,
-    //                 ),
-    //
-    //               ),
-    //
-    //             )
-    //         ),
-    //       ),
-    //     ),
-    //     // Container(
-    //     //   padding: EdgeInsets.all(30),
-    //     //   child: Card(
-    //     //
-    //     //       shadowColor: Colors.red,
-    //     //       elevation: 8,
-    //     //       clipBehavior: Clip.antiAlias,
-    //     //       shape:  RoundedRectangleBorder(
-    //     //         borderRadius: BorderRadius.circular(0),
-    //     //       ),
-    //     //       child: Container(
-    //     //         width:MediaQuery.of(context).size.width/3 ,
-    //     //         height: 100,
-    //     //         padding: EdgeInsets.all(10),
-    //     //         decoration: BoxDecoration(
-    //     //           image:  DecorationImage(
-    //     //             image: AssetImage("assets/img_13.png"),
-    //     //             fit: BoxFit.fill,
-    //     //             alignment: Alignment.topCenter,
-    //     //           ),
-    //     //
-    //     //         ),
-    //     //
-    //     //       )
-    //     //   ),
-    //     // ),
-    //   ],
-    // )
-
-
     // return DefaultTabController(
     //   length: 3,
     //   child: Scaffold(
@@ -706,6 +725,7 @@ class _sysState extends State<sys> {
             ),
           ),
         ),
+
         // Container(
         //   padding: EdgeInsets.all(30),
         //   child: GestureDetector(
@@ -745,7 +765,7 @@ class _sysState extends State<sys> {
   }
 
 }
-class Rating6Controller extends GetxController {
+class Rating14Controller extends GetxController {
   int currentRating = 0;
   final box = GetStorage();
 

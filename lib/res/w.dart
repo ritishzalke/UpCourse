@@ -16,7 +16,7 @@ class _WState extends State<W> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
+      appBar: AppBar(iconTheme: IconThemeData( color: Colors.black,),
         title: Text("WEB DEVELOPMENT",style: TextStyle(color: Colors.black)
           ,),
         backgroundColor: Colors.deepPurple,

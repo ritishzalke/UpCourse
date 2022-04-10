@@ -26,10 +26,12 @@ class _AState extends State<A> {
       child: Scaffold(
 
         appBar: AppBar(
+          iconTheme: IconThemeData( color: Colors.black,),
           backgroundColor: Colors.deepPurple,
           title: Container(
             color: Colors.deepPurple,
             child: Text('APP DEVELOPMENT',style: TextStyle(color: Colors.black),),
+
           ),
           bottom: TabBar(
             labelColor: Colors.black,

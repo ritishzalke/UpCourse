@@ -1,36 +1,35 @@
+
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:upcourse/YT_Screens/App/Kotlin/6.dart';
 import 'package:upcourse/YT_Screens/App/Kotlin/7.dart';
 import 'package:upcourse/YT_Screens/App/Swift/10.dart';
 import 'package:upcourse/YT_Screens/App/Swift/9.dart';
-
+import 'package:upcourse/YT_Screens/UI/16.dart';
+import 'package:upcourse/YT_Screens/UI/17.dart';
+import 'package:upcourse/YT_Screens/UI/18.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:get/get.dart';
+import '../YT_Screens/App/Flutter/1.dart';
+import '../YT_Screens/App/Flutter/2.dart';
+import '../YT_Screens/App/Flutter/3.dart';
+import '../YT_Screens/App/Flutter/4.dart';
+import '../YT_Screens/App/Flutter/5.dart';
 
-import 'YT_Screens/App/Flutter/1.dart';
-import 'YT_Screens/App/Flutter/2.dart';
-import 'YT_Screens/App/Flutter/3.dart';
-import 'YT_Screens/App/Flutter/4.dart';
-import 'YT_Screens/App/Flutter/5.dart';
-
-import 'YT_Screens/dsa/19.dart';
-
-
-class data extends StatefulWidget {
-  const data({Key? key}) : super(key: key);
+class UIU extends StatefulWidget {
+  const UIU({Key? key}) : super(key: key);
 
   @override
-  State<data> createState() => _dataState();
+  State<UIU> createState() => _UIUState();
 }
 
-class _dataState extends State<data> {
-  static const id = 'rating_page'; // see GetMaterialApp for this usage
-
-  final controller = Get.find<RatingController>(); // finding the same instance of initialized controller
+class _UIUState extends State<UIU> {
+  final controller = Get.find<Rating4Controller>(); // finding the same instance of initialized controller
 
   Widget _buildBody() {
     final stars = List<Widget>.generate(5, (index) {
-      return GetBuilder<RatingController>( // rebuilds when update() is called from GetX class
+      return GetBuilder<Rating4Controller>( // rebuilds when update() is called from GetX class
         builder: (controller) => Expanded(
           child: GestureDetector(
             child: controller.buildRatingStar(index),
@@ -62,50 +61,124 @@ class _dataState extends State<data> {
       ],
     );
   }
-
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Scaffold(  backgroundColor: Colors.black,
+      appBar: AppBar(  backgroundColor: Colors.deepPurple,
+        iconTheme: IconThemeData( color: Colors.black,),
+        title: Text("UI/UX",style: TextStyle(color: Colors.black),),
+      ),
+      body: SingleChildScrollView(
 
-      child:   Column(
-        children: [
-          Container(
-            padding: EdgeInsets.all(30),
-            child: GestureDetector(
-              onTap: () {
-                // Navigator.of(context).pop();
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (BuildContext context)=> YoutubePlayerDemo19(title: "player")),
-                );
-              },
-              child: Card(
+        child:   Column(
+          children: [
+            Container(
+              padding: EdgeInsets.all(30),
+              child: GestureDetector(
+                onTap: () {
+                  // Navigator.of(context).pop();
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (BuildContext context)=> YoutubePlayerDemo16(title: "player")),
+                  );
+                },
+                child: Card(
 
-                  shadowColor: Colors.red,
-                  elevation: 8,
-                  clipBehavior: Clip.antiAlias,
-                  shape:  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                  child: Container(
-                    width:MediaQuery.of(context).size.width/3 ,
-                    height: 100,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      image:  DecorationImage(
-                        image: AssetImage("assets/img_25.png"),
-                        fit: BoxFit.fill,
-                        alignment: Alignment.topCenter,
+                    shadowColor: Colors.red,
+                    elevation: 8,
+                    clipBehavior: Clip.antiAlias,
+                    shape:  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0),
+                    ),
+                    child: Container(
+                      width:MediaQuery.of(context).size.width/3 ,
+                      height: 100,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        image:  DecorationImage(
+                          image: AssetImage("assets/img_25.png"),
+                          fit: BoxFit.fill,
+                          alignment: Alignment.topCenter,
+                        ),
+
                       ),
 
-                    ),
-
-                  )
+                    )
+                ),
               ),
             ),
-          ),
+            Container(
+              padding: EdgeInsets.all(30),
+              child: GestureDetector(
+                onTap: () {
+                  // Navigator.of(context).pop();
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (BuildContext context)=> YoutubePlayerDemo17(title: "player")),
+                  );
+                },
+                child: Card(
 
-          _buildBody(),
-        ],
+                    shadowColor: Colors.red,
+                    elevation: 8,
+                    clipBehavior: Clip.antiAlias,
+                    shape:  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0),
+                    ),
+                    child: Container(
+                      width:MediaQuery.of(context).size.width/3 ,
+                      height: 100,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        image:  DecorationImage(
+                          image: AssetImage("assets/img_26.png"),
+                          fit: BoxFit.fill,
+                          alignment: Alignment.topCenter,
+                        ),
+
+                      ),
+
+                    )
+                ),
+              ),
+            ),
+            Container(
+
+              padding: EdgeInsets.all(30),
+              child: GestureDetector(
+                onTap: () {
+                  // Navigator.of(context).pop();
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (BuildContext context)=> YoutubePlayerDemo18(title: "player")),
+                  );
+                },
+                child: Card(
+
+                    shadowColor: Colors.red,
+                    elevation: 8,
+                    clipBehavior: Clip.antiAlias,
+                    shape:  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0),
+                    ),
+                    child: Container(
+                      width:MediaQuery.of(context).size.width/3 ,
+                      height: 100,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        image:  DecorationImage(
+                          image: AssetImage("assets/img_27.png"),
+                          fit: BoxFit.fill,
+                          alignment: Alignment.topCenter,
+                        ),
+
+                      ),
+
+                    )
+                ),
+              ),
+            ),
+            Text("Rate this Course:", style: TextStyle(color: Colors.red), ),
+            _buildBody(),
+          ],
+        ),
       ),
     );
 
@@ -674,17 +747,12 @@ class _dataState extends State<data> {
         //     ),
         //   ),
         // ),
-        //           Container(
-        //               height: 100,
-        //               child: Ratingpage()),
       ],
     );
-
   }
 
 }
-
-class RatingController extends GetxController {
+class Rating4Controller extends GetxController {
   int currentRating = 0;
   final box = GetStorage();
 

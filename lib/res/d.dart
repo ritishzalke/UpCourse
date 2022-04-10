@@ -16,7 +16,7 @@ class _DState extends State<D> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
+      appBar: AppBar(iconTheme: IconThemeData( color: Colors.black,),
         backgroundColor: Colors.deepPurple,
         title: Text("DSA",style: TextStyle(color: Colors.black),),
       ),

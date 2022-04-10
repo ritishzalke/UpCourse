@@ -1,8 +1,11 @@
+import 'dart:ui';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:upcourse/youtube_model.dart';
+import 'package:upcourse/YT_Screens/youtube_model.dart';
+
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 
@@ -75,9 +78,9 @@ class _YoutubePlayerDemo7State extends State<YoutubePlayerDemo7> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+    return Scaffold(  backgroundColor: Colors.black,
+      appBar: AppBar(  backgroundColor: Colors.deepPurple,iconTheme: IconThemeData( color: Colors.black,),
+        title: Text(widget.title,style: TextStyle(color: Colors.black),),
       ),
       body: SafeArea(
         child: Column(
@@ -141,7 +144,7 @@ class _YoutubePlayerDemo7State extends State<YoutubePlayerDemo7> {
                           child: CachedNetworkImage(
                             imageUrl:
                             "https://img.youtube.com/vi/${videosList[index].youtubeId}/0.jpg",
-                            fit: BoxFit.cover,
+                            fit: BoxFit.fill,
                           ),
                         ),
                         Positioned(

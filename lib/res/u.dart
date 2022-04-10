@@ -16,7 +16,7 @@ class _UState extends State<U> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
+      appBar: AppBar(iconTheme: IconThemeData( color: Colors.black,),
         title: Text("UI/UX",style: TextStyle(color: Colors.black),),
         backgroundColor: Colors.deepPurple,
       ),

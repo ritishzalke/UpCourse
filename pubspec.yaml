@@ -35,15 +35,31 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   http: ^0.13.4
+  animated_text_kit: ^4.2.1
+  fluttertoast: ^8.0.9
+  ndialog: ^4.1.1
+  provider: ^6.0.2
+  platform: ^3.1.0
+  image_picker: ^0.8.5
+  image_picker_platform_interface: ^2.4.1
+  line_icons: ^2.0.1
+  line_awesome_flutter: ^2.0.0
   youtube_player_flutter: ^8.0.0
   youtube_player_iframe: ^2.2.2
   cached_network_image: ^3.1.0
   get: ^4.6.1
   get_storage: ^2.0.3
+  firebase_auth: ^3.1.1
+  firebase_database: ^8.0.0
+  firebase_storage: ^10.0.3
   shared_preferences: ^2.0.13
   mb_button: ^1.0.3
+  multi_image_picker: ^4.7.12
+  url_launcher: ^6.0.20
+  firebase_core: ^1.6.0
   flutter_email_sender: ^5.1.0
   font_awesome_flutter: ^10.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

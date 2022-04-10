@@ -16,7 +16,7 @@ class _OState extends State<O> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
+      appBar: AppBar(iconTheme: IconThemeData( color: Colors.black,),
         title: Text("OPERATING SYSTEMS",style: TextStyle(color: Colors.black),),
         backgroundColor: Colors.deepPurple,
       ),
@@ -27,6 +27,7 @@ class _OState extends State<O> {
           SizedBox(
             height: 16,
           ),
+
           Container(
             margin: EdgeInsets.only(left: 10),
             child: Text("Github link:", style: TextStyle(color: Colors.deepPurple, fontSize: 25),),
@@ -45,14 +46,33 @@ class _OState extends State<O> {
 
             ),
           ),SizedBox(
+            height: 16,
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 10),
+            child: Text("Cheatsheet:", style: TextStyle(color: Colors.deepPurple, fontSize: 25),),
+          ),SizedBox(
+            height: 16,
+          ),
+          Container(margin: EdgeInsets.only(left: 10),
+            child: RichText(text: TextSpan(
+                text: "Love Babbar - OS Cheatsheet",
+                style: TextStyle(color: Colors.green,decoration: TextDecoration.underline,fontSize: 18),
+                recognizer: TapGestureRecognizer()
+                  ..onTap=(){ launch("https://whimsical.com/operating-system-cheatsheet-by-love-babbar-S9tuWBCSQfzoBRF5EDNinQ");
+                  }
+            ),
+
+            ),
+          ),SizedBox(
             height: 13,
           ),
           Container(margin: EdgeInsets.only(left: 10),
             child: RichText(text: TextSpan(
-                text: "https://whimsical.com/operating-system-cheatsheet-by-love-babbar-S9tuWBCSQfzoBRF5EDNinQ",
+                text: "Bedtime Stories on Operating Systems",
                 style: TextStyle(color: Colors.green,decoration: TextDecoration.underline,fontSize: 18),
                 recognizer: TapGestureRecognizer()
-                  ..onTap=(){ launch("https://whimsical.com/operating-system-cheatsheet-by-love-babbar-S9tuWBCSQfzoBRF5EDNinQ");
+                  ..onTap=(){ launch("https://drive.google.com/file/d/1FAxjhyIlsGGouIyCPyR3xqKVgU7mhEmQ/view");
                   }
             ),
 
@@ -66,19 +86,9 @@ class _OState extends State<O> {
             child: Text(" Free Courses:", style: TextStyle(color: Colors.deepPurple, fontSize: 25),),
           ),
           SizedBox(
-            height: 16,
+            height: 13,
           ),
-          Container(margin: EdgeInsets.only(left: 10),
-            child: RichText(text: TextSpan(
-                text: "Udemy - Introduction to Game Development with Unity",
-                style: TextStyle(color: Colors.green,decoration: TextDecoration.underline,fontSize: 18),
-                recognizer: TapGestureRecognizer()
-                  ..onTap=(){ launch("https://drive.google.com/file/d/1FAxjhyIlsGGouIyCPyR3xqKVgU7mhEmQ/view");
-                  }
-            ),
 
-            ),
-          ),
           SizedBox(
             height: 13,
           ),

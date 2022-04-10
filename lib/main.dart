@@ -1,27 +1,42 @@
 
+
+import 'dart:ui';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-
+import 'package:firebase_core/firebase_core.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:get/get.dart';
+import 'package:upcourse/Pages/splash.dart';
+import 'package:upcourse/login/models/user_model.dart';
+import 'package:upcourse/login/screens/login_screen.dart';
+import 'package:upcourse/login/screens/profile_screen.dart';
 
 import 'package:upcourse/res/Resources.dart';
 
-import 'Category.dart';
 
-import 'appdev.dart';
 
-import 'design.dart';
-import 'dsa.dart';
-import 'game.dart';
 
-import 'os.dart';
-import 'wd.dart';
+import 'Pages/about.dart';
+import 'cards/appdev.dart';
+
+import 'cards/design.dart';
+import 'cards/dsa.dart';
+import 'cards/game.dart';
+
+import 'cards/os.dart';
+import 'Pages/Contact.dart';
+import 'cards/wd.dart';
 
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(new MyApp());
   await GetStorage.init();
   // Get.lazyPut(()=>Rating1Controller());
   Get.put(RatingController());
@@ -48,16 +63,16 @@ class MyApp extends StatelessWidget {
 
       ),
       debugShowCheckedModeBanner: false,
-      home:  MyHomePage(title: "home"),
+      home:  Splash(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
 
-  final String title;
+ final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -70,12 +85,31 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _checkboxValue4 = false;
   bool _checkboxValue5 = false;
   bool _checkboxValue6 = false;
+  late User user;
+ UserModel? userModel;
+  late DatabaseReference userRef;
+  _getUserDetails() async {
+    DataSnapshot snapshot = (await userRef.once());
+
+    userModel = UserModel.fromMap(Map<String, dynamic>.from(snapshot.value));
+
+    setState(() {});
+  }
+  @override
   void initState() {
     super.initState();
 
+    user = FirebaseAuth.instance.currentUser!;
+    if (user != null) {
+      userRef =
+          FirebaseDatabase.instance.reference().child('users').child(user.uid);
+    }
+
+    _getUserDetails();
     _loadswitchValue();
   }
 
+  @override
 
   _loadswitchValue() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -190,9 +224,21 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
 
-            Text(
-              'APP DEV',
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold , color: Colors.red,),
+            Row(
+              children: [
+                Text(
+                  'APP DEV',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold , color: Colors.red,),
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+                Text("4.6",style: TextStyle(color: Colors.yellow),),
+                Icon(
+                  Icons.star,
+                  color: Colors.yellow,
+                )
+              ],
             )
           ],
         );
@@ -292,9 +338,21 @@ class _MyHomePageState extends State<MyHomePage> {
               )
             ),
 
-            Text(
-              'UI/UX',
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold , color: Colors.red,),
+            Row(
+              children: [
+                Text(
+                  'UI/UX',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold , color: Colors.red,),
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+                Text("4.2",style: TextStyle(color: Colors.yellow),),
+                Icon(
+                  Icons.star,
+                  color: Colors.yellow,
+                )
+              ],
             )
           ],
         );
@@ -393,9 +451,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
             ),
 
-            Text(
-              'DSA',
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold , color: Colors.red,),
+            Row(
+              children: [
+                Text(
+                  'DSA',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold , color: Colors.red,),
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+                Text("4.8",style: TextStyle(color: Colors.yellow),),
+                Icon(
+                  Icons.star,
+                  color: Colors.yellow,
+                )
+              ],
             )
           ],
         );
@@ -493,9 +563,21 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
 
-            Text(
-              'GAME DEV',
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold , color: Colors.red,),
+            Row(
+              children: [
+                Text(
+                  'GAME DEV',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold , color: Colors.red,),
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+                Text("4.5",style: TextStyle(color: Colors.yellow),),
+                Icon(
+                  Icons.star,
+                  color: Colors.yellow,
+                )
+              ],
             )
           ],
         );
@@ -593,9 +675,21 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
 
-            Text(
-              'OPERATING SYSTEMS',
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold , color: Colors.red,),
+            Row(
+              children: [
+                Text(
+                  'OPERATING SYSTEMS',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold , color: Colors.red,),
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+                Text("4.6",style: TextStyle(color: Colors.yellow),),
+                Icon(
+                  Icons.star,
+                  color: Colors.yellow,
+                )
+              ],
             )
           ],
         );
@@ -693,9 +787,21 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
 
-            Text(
-              'WEB DEV',
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold , color: Colors.red,),
+            Row(
+              children: [
+                Text(
+                  'WEB DEV',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold , color: Colors.red,),
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+                Text("4.7",style: TextStyle(color: Colors.yellow),),
+                Icon(
+                  Icons.star,
+                  color: Colors.yellow,
+                )
+              ],
             )
           ],
         );
@@ -708,13 +814,7 @@ class _MyHomePageState extends State<MyHomePage> {
         );
     }
   }
-  List<Movie> favoriteMovies = [
-    Movie('DSA'),
-    Movie('APP DEVELOPMENT'),
-    Movie('WEB DEVELOPMENT'),
-    Movie('AI/ML'),
-    Movie('GAME DEVELOPMENT')
-  ];
+
   int i= 5;
   @override
   Widget build(BuildContext context) {
@@ -724,6 +824,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
 elevation: 0.0,
         backgroundColor: Colors.deepPurple,
+          iconTheme: IconThemeData( color: Colors.black,)
       ),
 drawer:  Drawer(
   backgroundColor: Colors.black,
@@ -736,7 +837,17 @@ drawer:  Drawer(
     //     backgroundImage: NetworkImage('https://images.squarespace-cdn.com/content/v1/5824673c2e69cfc8ac1e3cd3/1580377764933-1L0AVRF4MU86B18J3S4A/Picture+of+woodlands+taken+on+iphone+using+natural+light'),
     //   ) ,
     // ),
-
+      ListTile(
+        title: Text("My Profile", style: TextStyle(color: Colors.deepPurple),),
+        onTap: (){
+          // Navigator.of(context).pop();
+          Navigator.push(context, MaterialPageRoute(
+            builder: (BuildContext context)=> ProfileScreen(),
+          ),
+            //
+          );
+        },
+      ),
     ListTile(
         title: Text("Resources", style: TextStyle(color: Colors.deepPurple),),
     onTap: (){
@@ -748,13 +859,70 @@ drawer:  Drawer(
     );
     },
     ),
+      ListTile(
+        title: Text("Contact Us", style: TextStyle(color: Colors.deepPurple),),
+        onTap: (){
+          // Navigator.of(context).pop();
+          Navigator.push(context, MaterialPageRoute(
+            builder: (BuildContext context)=> Send(),
+          ),
+            //
+          );
+        },
+      ),
+      ListTile(
+        title: Text("About Us", style: TextStyle(color: Colors.deepPurple),),
+        onTap: (){
+          // Navigator.of(context).pop();
+          Navigator.push(context, MaterialPageRoute(
+            builder: (BuildContext context)=> About(),
+          ),
+            //
+          );
+        },
+      ),
+      ListTile(
+        title: Text("Log Out",style: TextStyle(color: Colors.deepPurple),),
+        onTap: (){
+          // Navigator.of(context).pop();
+          showDialog(context: context, builder: (ctx){
+            return AlertDialog(backgroundColor: Colors.deepPurple,
+              title: Text('Confirmation !!!',style: TextStyle(color: Colors.black),),
+              content: Text('Are you sure to Log Out ? ',style: TextStyle(color: Colors.black),),
+              actions: [
 
+                TextButton(onPressed: (){
+
+                  Navigator.of(ctx).pop();
+
+                }, child: Text('No',style: TextStyle(color: Colors.black),),),
+
+
+                TextButton(onPressed: (){
+                  Navigator.of(ctx).pop();
+
+                  FirebaseAuth.instance.signOut();
+
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context){
+                    return  LoginScreen();
+                  }));
+
+                }, child: Text('Yes',style: TextStyle(color: Colors.black),),),
+
+              ],
+            );
+          }
+          );
+        },
+      ),
     ],
     ),
 
 
     ),
-      body:  Container(
+      body:  userModel == null
+          ? const  Center(child:  CircularProgressIndicator())
+          :Container(
       alignment: Alignment.center,
       color: Colors.deepPurple,
       child: Column(
@@ -769,18 +937,7 @@ drawer:  Drawer(
       SizedBox(
       width: 32,
       ),
-      Container(
-      height: 56,
-      width: 56,
-      decoration: BoxDecoration(
-      image: DecorationImage(
-      image: NetworkImage("https://unsplash.com/photos/Y7C7F26fzZM/download?force=true&w=640"),
-      fit: BoxFit.cover
-    ),
-    borderRadius: BorderRadius.circular(36),
-    border: Border.all(width: 2.0,color: Colors.white)
-    ),
-    ),
+
     SizedBox(
     width: 16,
     ),
@@ -789,16 +946,16 @@ drawer:  Drawer(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
     Text(
-    "Hi, Ritish",
+    "Hi "+userModel!.fullName +",",
 
-    ),
+    style: TextStyle(fontSize: 30),),
     SizedBox(
     height: 8,
     ),
     Text(
     "Learning is easier and faster with us.",
 
-    ),
+    style: TextStyle(fontSize: 17),),
     ],
     )
     ],
@@ -993,7 +1150,24 @@ color: Colors.black,
 
          SingleChildScrollView(
            scrollDirection: Axis.horizontal,
-           child: Row(
+           child:  _getPage1(_checkboxValue)==false &&  _getPage2(_checkboxValue2)==false &&  _getPage3(_checkboxValue3)==false &&  _getPage4(_checkboxValue4)==false &&  _getPage5(_checkboxValue5)==false &&  _getPage6(_checkboxValue6)==false ?
+           Column(
+             children: [
+               Container(
+                 height: 150,
+    child: Text("data"),
+    //             decoration: BoxDecoration(
+    //            image:  DecorationImage(
+    //            image: AssetImage("assets/img_34.png"),
+    //            fit: BoxFit.cover,
+    //            alignment: Alignment.topCenter,
+    //      ),
+    //
+    // ),
+               ),
+             ],
+           ) :
+           Row(
              children: [
                Column(
 

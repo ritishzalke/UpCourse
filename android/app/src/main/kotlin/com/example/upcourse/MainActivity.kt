@@ -1,4 +1,4 @@
-package com.example.upcourse
+package com.Ritish.UpCourse
 
 import io.flutter.embedding.android.FlutterActivity
 

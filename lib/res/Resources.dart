@@ -1,5 +1,7 @@
 
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:upcourse/res/a.dart';
 import 'package:upcourse/res/u.dart';
@@ -21,8 +23,10 @@ class _ResourcesState extends State<Resources> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
-        title:Text("Resources") ,
-      ),backgroundColor: Colors.red,
+        title:Text("Resources",style: TextStyle(color: Colors.black),) ,
+          iconTheme: IconThemeData( color: Colors.black,)
+      ),backgroundColor: Colors.black,
+
       body:ListView(
         children: [
           // new UserAccountsDrawerHeader(
@@ -32,8 +36,13 @@ class _ResourcesState extends State<Resources> {
           //     backgroundImage: NetworkImage('https://images.squarespace-cdn.com/content/v1/5824673c2e69cfc8ac1e3cd3/1580377764933-1L0AVRF4MU86B18J3S4A/Picture+of+woodlands+taken+on+iphone+using+natural+light'),
           //   ) ,
           // ),
-
-          ListTile(
+        Card(
+        elevation: 8.0,
+        margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+        child: Container(
+          decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 96, .9)),
+          child:  ListTile(
+            trailing: Icon(Icons.keyboard_arrow_right, color: Colors.black, size: 30.0),
             title: Text("APP DEVELOPMENT"),
             onTap: (){
 
@@ -52,30 +61,49 @@ class _ResourcesState extends State<Resources> {
             //   );
             // },
           ),
-          new Divider(),
-          ListTile(
-            title: Text("WEB DEVEOPMENT"),
-            onTap: (){
+        ),
+      ),
 
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (BuildContext context)=> W()
-              ),
+        Card(
+          elevation: 8.0,
+          margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+          child: Container(
+            decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 96, .9)),
+            child: ListTile(
+              trailing: Icon(Icons.keyboard_arrow_right, color: Colors.black, size: 30.0),
+              title: Text("WEB DEVEOPMENT"),
+              onTap: (){
 
-              );
-            },
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (BuildContext context)=> W()
+                ),
+
+                );
+              },
+            ),
           ),
-          new Divider(),
-          ListTile(
-            title: Text("GAME DEVELOPMENT"),
-            onTap: (){
+        ),
 
-              Navigator.push(context, MaterialPageRoute(
-                builder: (BuildContext context)=> G(),
-              ),
+        Card(
+          elevation: 8.0,
+          margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+          child: Container(
+            decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 96, .9)),
+            child: ListTile(
+              trailing: Icon(Icons.keyboard_arrow_right, color: Colors.black, size: 30.0),
+              title: Text("GAME DEVELOPMENT"),
+              onTap: (){
 
-              );
-            },
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (BuildContext context)=> G(),
+                ),
+
+                );
+              },
+            ),
           ),
+        ),
+
           // new Divider(),
           // ListTile(
           //   title: Text("Medicine reminder"),
@@ -88,44 +116,67 @@ class _ResourcesState extends State<Resources> {
           //     );
           //   },
           // ),
-          new Divider(),
-          ListTile(
-            title: Text("UI/UX"),
-            onTap: (){
+        Card(
+          elevation: 8.0,
+          margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+          child: Container(
+            decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 96, .9)),
+            child:  ListTile(
+              trailing: Icon(Icons.keyboard_arrow_right, color: Colors.black, size: 30.0),
+              title: Text("UI/UX"),
+              onTap: (){
 
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (BuildContext context)=> U()
-              ),
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (BuildContext context)=> U()
+                ),
 
-              );
-            },
+                );
+              },
+            ),
           ),
+        ),
+        Card(
+          elevation: 8.0,
+          margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+          child: Container(
+            decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 96, .9)),
+            child: ListTile(
+              trailing: Icon(Icons.keyboard_arrow_right, color: Colors.black, size: 30.0),
+              title: Text("DSA"),
+              onTap: (){
+                Navigator.push(context, new MaterialPageRoute(
+                    builder: (BuildContext context)=> new D()
+                ),
 
-
-          new Divider(),
-          ListTile(
-            title: Text("OPERATING SYSTEMS"),
-            onTap: (){
-              // Navigator.of(context).pop();
-              Navigator.push(context, new MaterialPageRoute(
-                  builder: (BuildContext context)=> new O()
-              ),
-
-              );
-            },
+                );
+              },
+            ),
           ),
+        ),
+        Card(
+          elevation: 8.0,
+          margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+          child: Container(
+            decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 96, .9)),
+            child: ListTile(
+              trailing: Icon(Icons.keyboard_arrow_right, color: Colors.black, size: 30.0),
+              title: Text("OPERATING SYSTEMS"),
 
-          new Divider(),
-          ListTile(
-            title: Text("DSA"),
-            onTap: (){
-              Navigator.push(context, new MaterialPageRoute(
-                  builder: (BuildContext context)=> new D()
-              ),
+              onTap: (){
+                // Navigator.of(context).pop();
+                Navigator.push(context, new MaterialPageRoute(
+                    builder: (BuildContext context)=> new O()
+                ),
 
-              );
-            },
+                );
+              },
+
+            ),
           ),
+        ),
+
+
+
           // ListTile(
           //   title: Text("DSA"),
           //   // onTap: (){

@@ -1,8 +1,11 @@
+import 'dart:ui';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:upcourse/youtube_model.dart';
+import 'package:upcourse/YT_Screens/youtube_model.dart';
+
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 
@@ -85,35 +88,7 @@ class _YoutubePlayerDemo22State extends State<YoutubePlayerDemo22> {
     // YoutubeModel(id: 66, youtubeId: 'Z4vzWxCcDCY'),
     // YoutubeModel(id: 67, youtubeId: '8rcUs5RutX0'),
     // YoutubeModel(id: 68, youtubeId: 'pR1uhp--COc'),
-    // YoutubeModel(id: 69, youtubeId: 'q2BpMvPhhrY'),
-    // YoutubeModel(id: 70, youtubeId: 'dYIoWkCvd6A'),
-    // YoutubeModel(id: 71, youtubeId: 'H3BU_Do_l-Q'),
-    // YoutubeModel(id: 72, youtubeId: 'sveZw_GG_cs'),
-    // YoutubeModel(id: 73, youtubeId: 'udZi6uiR8bM'),
-    // YoutubeModel(id: 74, youtubeId: '9uoa_p8q47Y'),
-    // YoutubeModel(id: 75, youtubeId: 'yP89YlEGCqA'),
-    // YoutubeModel(id: 76, youtubeId: 'P_dA8VGJjA8'),
-    // YoutubeModel(id: 77, youtubeId: 'xouo556RGiE'),
-    // YoutubeModel(id: 78, youtubeId: 'Q2qcqX_hvR0'),
-    // YoutubeModel(id: 79, youtubeId: 'vLqZ6ZMBkX8'),
-    // YoutubeModel(id: 80, youtubeId: 'gwCgG5ORXW8'),
-    // YoutubeModel(id: 81, youtubeId: 'AF3FoARvtcc'),
-    // YoutubeModel(id: 82, youtubeId: '0LtuQhNFFe0'),
-    // YoutubeModel(id: 83, youtubeId: 'q1wGGZbOr4s'),
-    // YoutubeModel(id: 84, youtubeId: 'J6wVO4pvUCw'),
-    // YoutubeModel(id: 85, youtubeId: 'XHx-ms5Ldi4'),
-    // YoutubeModel(id: 86, youtubeId: 'irGdM3iIS54'),
-    // YoutubeModel(id: 87, youtubeId: 'S6lLRz7SQUw'),
-    // YoutubeModel(id: 88, youtubeId: 'BJ13GsC0_os'),
-    // YoutubeModel(id: 89, youtubeId: 'DKb7KhfoZmU'),
-    // YoutubeModel(id: 90, youtubeId: '10tZ7JBiN0w'),
-    // YoutubeModel(id: 91, youtubeId: 'kflveJ5_-iFA'),
-    // YoutubeModel(id: 92, youtubeId: '8NZZSgtTelc'),
-    // YoutubeModel(id: 93, youtubeId: 'rDjSD1vcsRI'),
-    // YoutubeModel(id: 94, youtubeId: '9CY0V0JAgNU'),
-    // YoutubeModel(id: 95, youtubeId: 'o3Gfsc6kihk'),
-    // YoutubeModel(id: 96, youtubeId: 'o3Gfsc6kihk'),
-    // YoutubeModel(id: 97, youtubeId: 'o3Gfsc6kihk'),
+
 
 
 
@@ -161,8 +136,10 @@ class _YoutubePlayerDemo22State extends State<YoutubePlayerDemo22> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text(widget.title),
+          backgroundColor: Colors.deepPurple,iconTheme: IconThemeData( color: Colors.black,),
+        title: Text(widget.title,style: TextStyle(color: Colors.black),),
       ),
       body: SafeArea(
         child: Column(
@@ -226,7 +203,7 @@ class _YoutubePlayerDemo22State extends State<YoutubePlayerDemo22> {
                           child: CachedNetworkImage(
                             imageUrl:
                             "https://img.youtube.com/vi/${videosList[index].youtubeId}/0.jpg",
-                            fit: BoxFit.cover,
+                            fit: BoxFit.fill,
                           ),
                         ),
                         Positioned(

@@ -1,3 +1,6 @@
+
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:upcourse/YT_Screens/App/Kotlin/6.dart';
 import 'package:upcourse/YT_Screens/App/Kotlin/7.dart';
@@ -10,14 +13,14 @@ import 'package:upcourse/YT_Screens/game/22.dart';
 import 'package:upcourse/YT_Screens/game/23.dart';
 
 
-import 'YT_Screens/App/Flutter/1.dart';
-import 'YT_Screens/App/Flutter/2.dart';
-import 'YT_Screens/App/Flutter/3.dart';
-import 'YT_Screens/App/Flutter/4.dart';
-import 'YT_Screens/App/Flutter/5.dart';
-import 'YT_Screens/Web/11.dart';
-import 'YT_Screens/Web/14.dart';
-import 'YT_Screens/Web/15.dart';
+import '../YT_Screens/App/Flutter/1.dart';
+import '../YT_Screens/App/Flutter/2.dart';
+import '../YT_Screens/App/Flutter/3.dart';
+import '../YT_Screens/App/Flutter/4.dart';
+import '../YT_Screens/App/Flutter/5.dart';
+import '../YT_Screens/Web/11.dart';
+import '../YT_Screens/Web/14.dart';
+import '../YT_Screens/Web/15.dart';
 
 class game extends StatefulWidget {
   const game({Key? key}) : super(key: key);
@@ -66,115 +69,122 @@ class _gameState extends State<game> {
   }
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Scaffold(  backgroundColor: Colors.black,
+      appBar: AppBar(  backgroundColor: Colors.deepPurple,
+        iconTheme: IconThemeData( color: Colors.black,),
+        title: Text("GAME DEVELOPMENT",style: TextStyle(color: Colors.black),),
+      ),
+     body: SingleChildScrollView(
 
-      child:   Column(
-        children: [
-          Container(
-            padding: EdgeInsets.all(30),
-            child: GestureDetector(
-              onTap: () {
-                // Navigator.of(context).pop();
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (BuildContext context)=> YoutubePlayerDemo22(title: "player")),
-                );
-              },
-              child: Card(
+        child:   Column(
+          children: [
+            Container(
+              padding: EdgeInsets.all(30),
+              child: GestureDetector(
+                onTap: () {
+                  // Navigator.of(context).pop();
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (BuildContext context)=> YoutubePlayerDemo22(title: "player")),
+                  );
+                },
+                child: Card(
 
-                  shadowColor: Colors.red,
-                  elevation: 8,
-                  clipBehavior: Clip.antiAlias,
-                  shape:  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                  child: Container(
-                    width:MediaQuery.of(context).size.width/3 ,
-                    height: 100,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      image:  DecorationImage(
-                        image: AssetImage("assets/img_25.png"),
-                        fit: BoxFit.fill,
-                        alignment: Alignment.topCenter,
+                    shadowColor: Colors.red,
+                    elevation: 8,
+                    clipBehavior: Clip.antiAlias,
+                    shape:  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0),
+                    ),
+                    child: Container(
+                      width:MediaQuery.of(context).size.width/3 ,
+                      height: 100,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        image:  DecorationImage(
+                          image: AssetImage("assets/img_31.png"),
+                          fit: BoxFit.fill,
+                          alignment: Alignment.topCenter,
+                        ),
+
                       ),
 
-                    ),
-
-                  )
+                    )
+                ),
               ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.all(30),
-            child: GestureDetector(
-              onTap: () {
-                // Navigator.of(context).pop();
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (BuildContext context)=> YoutubePlayerDemo23(title: "player")),
-                );
-              },
-              child: Card(
+            Container(
+              padding: EdgeInsets.all(30),
+              child: GestureDetector(
+                onTap: () {
+                  // Navigator.of(context).pop();
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (BuildContext context)=> YoutubePlayerDemo23(title: "player")),
+                  );
+                },
+                child: Card(
 
-                  shadowColor: Colors.red,
-                  elevation: 8,
-                  clipBehavior: Clip.antiAlias,
-                  shape:  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(0),
-                  ),
-                  child: Container(
-                    width:MediaQuery.of(context).size.width/3 ,
-                    height: 100,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      image:  DecorationImage(
-                        image: AssetImage("assets/img_26.png"),
-                        fit: BoxFit.fill,
-                        alignment: Alignment.topCenter,
+                    shadowColor: Colors.red,
+                    elevation: 8,
+                    clipBehavior: Clip.antiAlias,
+                    shape:  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0),
+                    ),
+                    child: Container(
+                      width:MediaQuery.of(context).size.width/3 ,
+                      height: 100,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        image:  DecorationImage(
+                          image: AssetImage("assets/img_32.png"),
+                          fit: BoxFit.fill,
+                          alignment: Alignment.topCenter,
+                        ),
+
                       ),
 
-                    ),
-
-                  )
+                    )
+                ),
               ),
             ),
-          ),
-          _buildBody(),
-          // Container(
-          //
-          //   padding: EdgeInsets.all(30),
-          //   child: GestureDetector(
-          //     onTap: () {
-          //       // Navigator.of(context).pop();
-          //       Navigator.push(context, MaterialPageRoute(
-          //           builder: (BuildContext context)=> YoutubePlayerDemo18(title: "player")),
-          //       );
-          //     },
-          //     child: Card(
-          //
-          //         shadowColor: Colors.red,
-          //         elevation: 8,
-          //         clipBehavior: Clip.antiAlias,
-          //         shape:  RoundedRectangleBorder(
-          //           borderRadius: BorderRadius.circular(0),
-          //         ),
-          //         child: Container(
-          //           width:MediaQuery.of(context).size.width/3 ,
-          //           height: 100,
-          //           padding: EdgeInsets.all(10),
-          //           decoration: BoxDecoration(
-          //             image:  DecorationImage(
-          //               image: AssetImage("assets/img_27.png"),
-          //               fit: BoxFit.fill,
-          //               alignment: Alignment.topCenter,
-          //             ),
-          //
-          //           ),
-          //
-          //         )
-          //     ),
-          //   ),
-          // ),
-        ],
+            Text("Rate this Course:", style: TextStyle(color: Colors.red), ),
+            _buildBody(),
+            // Container(
+            //
+            //   padding: EdgeInsets.all(30),
+            //   child: GestureDetector(
+            //     onTap: () {
+            //       // Navigator.of(context).pop();
+            //       Navigator.push(context, MaterialPageRoute(
+            //           builder: (BuildContext context)=> YoutubePlayerDemo18(title: "player")),
+            //       );
+            //     },
+            //     child: Card(
+            //
+            //         shadowColor: Colors.red,
+            //         elevation: 8,
+            //         clipBehavior: Clip.antiAlias,
+            //         shape:  RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(0),
+            //         ),
+            //         child: Container(
+            //           width:MediaQuery.of(context).size.width/3 ,
+            //           height: 100,
+            //           padding: EdgeInsets.all(10),
+            //           decoration: BoxDecoration(
+            //             image:  DecorationImage(
+            //               image: AssetImage("assets/img_27.png"),
+            //               fit: BoxFit.fill,
+            //               alignment: Alignment.topCenter,
+            //             ),
+            //
+            //           ),
+            //
+            //         )
+            //     ),
+            //   ),
+            // ),
+          ],
+        ),
       ),
     );
 

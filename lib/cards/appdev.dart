@@ -8,11 +8,11 @@ import 'package:upcourse/YT_Screens/App/Swift/10.dart';
 import 'package:upcourse/YT_Screens/App/Swift/9.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:get/get.dart';
-import 'YT_Screens/App/Flutter/1.dart';
-import 'YT_Screens/App/Flutter/2.dart';
-import 'YT_Screens/App/Flutter/3.dart';
-import 'YT_Screens/App/Flutter/4.dart';
-import 'YT_Screens/App/Flutter/5.dart';
+import '../YT_Screens/App/Flutter/1.dart';
+import '../YT_Screens/App/Flutter/2.dart';
+import '../YT_Screens/App/Flutter/3.dart';
+import '../YT_Screens/App/Flutter/4.dart';
+import '../YT_Screens/App/Flutter/5.dart';
 
 class AppDev extends StatefulWidget {
   const AppDev({Key? key}) : super(key: key);
@@ -66,7 +66,7 @@ class _AppDevState extends State<AppDev> {
       length: 3,
       child: Scaffold(
 
-        appBar: AppBar(
+        appBar: AppBar(iconTheme: IconThemeData( color: Colors.black,),
           backgroundColor: Colors.deepPurple,
           title: Container(
             color: Colors.deepPurple,
